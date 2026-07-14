@@ -10,7 +10,7 @@ class Node {
        data = d;
        prev = next = null;      
     }
-    
+
 };
 
 public class Doubly {
@@ -119,6 +119,22 @@ public class Doubly {
         if (head == curr)
             head = curr.next;
         curr = null; 
+        return head;
+    }
+
+    static Node reverse(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node currNode = head;
+        Node prevNode = null;
+        while (currNode != null) {
+            prevNode = currNode.prev;
+            currNode.prev = currNode.next;
+            currNode.next = prevNode;
+            currNode = currNode.prev;
+        }
+        head = prevNode.prev;
         return head;
     }
 

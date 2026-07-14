@@ -51,9 +51,7 @@ class Node {
 
     static Node deleteHead(Node head) {
         if (head == null) return null;
-        Node temp = head;
         head = head.next;
-        temp = null;
         return head;
     }
 
